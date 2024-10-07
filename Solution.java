@@ -22,16 +22,19 @@ class Student {
         System.out.println("Name: " + this.name + " Age: " + this.age);
     }
 
+    // Parameteriswed Constructer
     public Student(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
+    // Copy Constructer
     Student(Student s) {
         this.name = s.name;
         this.age = s.age;
     }
 
+    // Normal Constructer
     Student() {
     }
 }
