@@ -1,0 +1,154 @@
+Class: A blueprint for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).
+    Example:
+    class Car {
+        String model;
+        int year;
+
+        void displayInfo() {
+            System.out.println("Model: " + model + ", Year: " + year);
+        }
+    }
+
+Object: An instance of a class. It contains real values instead of variables.
+    Example:
+    Car myCar = new Car();
+    myCar.model = "Toyota";
+    myCar.year = 2020;
+    myCar.displayInfo(); // Output: Model: Toyota, Year: 2020
+
+Constructors: Special methods used to initialize objects.
+    1 - Normal Constructor: Initializes an object with default values.
+        Example:
+        class Bike {
+            String brand;
+            int speed;
+
+            // Normal Constructor
+            Bike() {
+                brand = "Yamaha";
+                speed = 0;
+            }
+        }
+
+    2 - Parameterized Constructor: Initializes an object with given values.
+        Example:
+        class Bike {
+            String brand;
+            int speed;
+
+            // Parameterized Constructor
+            Bike(String brand, int speed) {
+                this.brand = brand;
+                this.speed = speed;
+            }
+        }
+
+    3 - Copy Constructor: Initializes an object using another object of the same class.
+        Example:
+        class Bike {
+            String brand;
+            int speed;
+
+            // Parameterized Constructor
+            Bike(String brand, int speed) {
+                this.brand = brand;
+                this.speed = speed;
+            }
+
+            // Copy Constructor
+            Bike(Bike bike) {
+                this.brand = bike.brand;
+                this.speed = bike.speed;
+            }
+        }
+
+Polymorphism: Using one function for different purposes.
+    1 - Compile-time Polymorphism (Method Overloading): Same method name with different parameters.
+        Example:
+        class MathOperations {
+            int add(int a, int b) {
+                return a + b;
+            }
+
+            int add(int a, int b, int c) {
+                return a + b + c;
+            }
+        }
+
+    2 - Runtime Polymorphism (Method Overriding): Subclass provides a specific implementation of a method already defined in its superclass.
+        Example:
+        class Animal {
+            void makeSound() {
+                System.out.println("Animal makes a sound");
+            }
+        }
+
+        class Cat extends Animal {
+            @Override
+            void makeSound() {
+                System.out.println("Meow");
+            }
+        }
+
+Inheritance: Mechanism where one class acquires the properties and behaviors of a parent class.
+    Example:
+    class Vehicle {
+        String brand;
+
+        void honk() {
+            System.out.println("Beep! Beep!");
+        }
+    }
+
+    class Car extends Vehicle {
+        int doors;
+
+        void display() {
+            System.out.println("Brand: " + brand + ", Doors: " + doors);
+        }
+    }
+
+
+Encapsulation: Bundling data and methods that operate on the data within one unit, e.g., a class in Java.
+    Example:
+    class Person {
+        private String name;
+        private int age;
+
+        public Person(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+    }
+
+Abstraction: Hiding complex implementation details and showing only the necessary features of an object.
+    Example:
+    abstract class Animal {
+        abstract void makeSound();
+
+        public void eat() {
+            System.out.println("This animal eats food.");
+        }
+    }
+
+    class Dog extends Animal {
+        void makeSound() {
+            System.out.println("Bark");
+        }
+    }
